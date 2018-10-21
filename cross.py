@@ -26,6 +26,9 @@ T  = torch.einsum('ai,aj,ka,la->ijkl',(P,P,PT,PT))
 
 lnZ = torch.zeros(1)
 
+cut = args.cut
+epsilon=0
+
 for n in range(args.iters):
     maxT = T.max()
     T = T/maxT
@@ -38,9 +41,11 @@ for n in range(args.iters):
     Ua,Sa,Va = torch.svd(TypeA)
     Ub,Sb,Vb = torch.svd(TypeB)
 
-    S2 = torch.matmul(Ub,torch.diag(torch.sqrt(Sb)))
-    S1 = torch.matmul(torch.diag(torch.sqrt(Sb)),Vb.t())
-    S3 = torch.matmul(Ua,torch.diag(torch.sqrt(Sa)))
-    S4 = torch.matmul(torch.diag(torch.sqrt(Sa)),Va.t())
+    D = min(min(2**2,cut),min((Sa>epsilon).sum().item(),(Sb>epsilon).sum().item()))
 
-    T = torch.einsum('abc,db',(S1,S2,S3,S4))
+    S2 = torch.matmul(Ub,torch.diag(torch.sqrt(Sb))).view(2,2,4)
+    S1 = torch.matmul(torch.diag(torch.sqrt(Sb)),Vb.t()).view(4,2,2)
+    S3 = torch.matmul(Ua,torch.diag(torch.sqrt(Sa))).view(2,2,4)
+    S4 = torch.matmul(torch.diag(torch.sqrt(Sa)),Va.t()).view(4,2,2)
+
+    T = torch.einsum('abc,bde,dfg,ncf->aegn',(S1,S3,S2,S4))
