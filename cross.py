@@ -43,8 +43,8 @@ for n in range(args.iters):
     Ub,Sb,Vb = torch.svd(TypeB)
 
     cut = min(maxCut,min((Sa>epsilon).sum().item(),(Sb>epsilon).sum().item()))
-    print(cut)
-    print(maxT)
+    #print(cut)
+    #print(maxT)
 
     S2 = torch.matmul(Ub[:,:cut],torch.diag(torch.sqrt(Sb[:cut]))).view(D,D,cut)
     S1 = torch.matmul(torch.diag(torch.sqrt(Sb[:cut])),Vb.t()[:cut,:]).view(cut,D,D)
@@ -59,8 +59,8 @@ for n in range(args.iters):
 trace = 0
 for i in range(D):
     trace += T[i,i,i,i]
-    print(trace)
-print(lnZ)
+    #print(trace)
+#print(lnZ)
 lnZ += torch.log(trace)
 
 print("K:",K.item())
