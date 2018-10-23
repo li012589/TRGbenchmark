@@ -22,7 +22,7 @@ P = torch.matmul(U,torch.diag(torch.sqrt(S)))
 
 PT = torch.matmul(torch.diag(torch.sqrt(S)),V.t())
 
-T  = torch.einsum('ai,aj,ka,la->ijkl',(P,P,PT,PT))
+T = torch.einsum('ai,aj,ka,la->ijkl',(P,P,PT,PT))
 
 lnZ = torch.zeros(1)
 
@@ -51,7 +51,7 @@ for n in range(args.iters):
     S3 = torch.matmul(Ua[:,:cut],torch.diag(torch.sqrt(Sa[:cut]))).view(D,D,cut)
     S4 = torch.matmul(torch.diag(torch.sqrt(Sa[:cut])),Va.t()[:cut,:]).view(cut,D,D)
 
-    T = torch.einsum('abc,bde,dfg,ncf->aegn',(S1,S3,S2,S4))
+    T = torch.einsum('abc,cde,fdg,nfb->aegn',(S1,S3,S2,S4))
     D = cut
     #import pdb
     #pdb.set_trace()
