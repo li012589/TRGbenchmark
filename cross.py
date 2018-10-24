@@ -56,9 +56,10 @@ for n in range(args.iters):
     #import pdb
     #pdb.set_trace()
 
-trace = 0
-for i in range(D):
-    trace += T[i,i,i,i]
+trace = torch.einsum("aaaa->",T)
+#trace = 0
+#for i in range(D):
+#    trace += T[i,i,i,i]
     #print(trace)
 #print(lnZ)
 lnZ += torch.log(trace)
