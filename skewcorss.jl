@@ -2,7 +2,7 @@ using LinearAlgebra
 using TensorOperations
 
 function main()
-    K = 1.0
+     K = 1.0
 
     iteration = 20
 
@@ -30,7 +30,7 @@ function main()
 
     lnZ = 0.0
 
-    for n = 1:iteration
+    @inbounds for n = 1:iteration
         maxVal = maximum(T)
         T /= maxVal
         lnZ += 2^(iteration-n+1)*log(maxVal)
