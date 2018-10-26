@@ -2,7 +2,7 @@ using LinearAlgebra
 using TensorOperations
 
 function main()
-    K = 1.1
+    K = 1.0
 
     iteration = 20
 
