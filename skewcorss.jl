@@ -13,6 +13,7 @@ function main()
     no2s(no::Int64) = -2*no+3 ::Int64
     sumS(s0::Int64,s1::Int64,s2::Int64,s3::Int64) = Float64(no2s(s0)*no2s(s1)+no2s(s1)*no2s(s2)+no2s(s2)*no2s(s3)+no2s(s3)*no2s(s0))
 
+    @inbounds begin
     for s0 = 1:2
         for s1 = 1:2
             for s2 = 1:2
@@ -21,6 +22,7 @@ function main()
                 end
             end
         end
+    end
     end
 
     D = 2
