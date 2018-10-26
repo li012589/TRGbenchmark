@@ -16,7 +16,7 @@ torch.set_grad_enabled(False)
 
 K = torch.tensor([1/args.T*args.J],dtype= torch.float64)
 
-T = torch.empty(2,2,2,2)
+T = torch.empty(2,2,2,2).to(torch.float64)
 ran = [1,-1]
 for i0,s0 in enumerate(ran):
     for i1,s1 in enumerate(ran):
@@ -40,7 +40,7 @@ if args.test:
 maxCut = args.cut
 D = 2
 epsilon=0
-lnZ = torch.zeros(1)
+lnZ = torch.zeros(1).to(torch.float64)
 
 for n in range(args.iters):
     maxT = T.max()
