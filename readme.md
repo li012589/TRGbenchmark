@@ -12,11 +12,11 @@ The result is
 
 The scaling curve with iterations is
 
-![scaling curve](./iterations.png)
+![scaling curve](./etc/iterations.png)
 
 The scaling curve with maximum cuts is
 
-![cut](./maximumcut.png)
+![cut](./etc/maximumcut.png)
 
 ## Details
 
