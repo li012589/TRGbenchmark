@@ -1,12 +1,7 @@
 using LinearAlgebra
 using TensorOperations
 
-function main()
-     K = 1.0
-
-    iteration = 20
-
-    maxD = 20
+function main(K::Float64,iteration::Int64,maxD::Int64)
 
     T = zeros(Float64,2,2,2,2)
 
@@ -53,4 +48,5 @@ function main()
     println("lnZ/N:",lnZ/(2^(iteration+1)))
 end
 
-main()
+
+main(1.0,20,20)
