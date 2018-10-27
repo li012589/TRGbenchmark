@@ -1,7 +1,7 @@
 using LinearAlgebra
 using TensorOperations
 
-function main(K::Float64,iteration::Int64,maxD::Int64)
+function TRG(K::Float64,iteration::Int64,maxD::Int64)
 
     T = zeros(Float64,2,2,2,2)
 
@@ -48,5 +48,18 @@ function main(K::Float64,iteration::Int64,maxD::Int64)
     println("lnZ/N:",lnZ/(2^(iteration+1)))
 end
 
+function main(args)
+    if isempty(args)
+        K = 1.0
+        iters = 20
+        cut = 20
+    else
+        K = parse(Float64,args[1])
+        iters = parse(Int64,args[2])
+        cut = parse(Int64,args[3])
+    end
+    TRG(K,iters,cut)
+end
 
-main(1.0,20,20)
+main(ARGS)
+
