@@ -1,6 +1,6 @@
 # Benchmark of Different Tenosr Implements
 
-Currently, these tests focus on three different implement: using pytorch; using julia and using itensor.
+Currently, these tests focus on three different implements: using pytorch; using julia and using itensor.
 
 The result is
 
@@ -20,7 +20,7 @@ The scaling curve with maximum cuts is
 
 ## Details
 
-The test is done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor. And the pytorch test doesn't utilize a GPU. 
+These tests are done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor. And the pytorch test doesn't utilize a GPU. 
 
 Library versions:
 
