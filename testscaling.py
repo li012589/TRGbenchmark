@@ -1,9 +1,9 @@
 import time
 import subprocess
 
-command0 = ["python","./trg.py"]
-command1 = ["julia","./trg.jl"]
-command2 = ["./itrg/trg"]
+command0 = ["python","./pytorch/trg.py"]
+command1 = ["julia","./julia/trg.jl"]
+command2 = ["./itensor/trg"]
 
 iterPoints = [10,20,30,40,50,60]
 cutPoints = [10,20,30,40,50]

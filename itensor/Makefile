@@ -1,4 +1,4 @@
-LIBRARY_DIR=$(HOME)/Documents/MySpace/itensor
+LIBRARY_DIR=$(HOME)/itensor
 
 APP=trg
 

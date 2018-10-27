@@ -2,9 +2,9 @@ import time
 import subprocess
 
 trys = 10
-command0 = ["python","./trg.py"]
-command1 = ["julia","./trg.jl"]
-command2 = ["./itrg/trg"]
+command0 = ["python","./pytorch/trg.py"]
+command1 = ["julia","./julia/trg.jl"]
+command2 = ["./itensor/trg"]
 
 def testrun(command,trys):
     during = 0
