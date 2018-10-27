@@ -32,20 +32,16 @@ for(auto s4 : range1(m0))
     A.set(x(s1),y2(s2),x2(s3),y(s4),val);
     }
 
-//auto tmp_inds = A.inds();
 auto maxVal = 0.0;
 
 auto lnZ = 0.0;
 auto sumA=0.0;
-//std::cout<<"A:"<<std::endl;
-//PrintData(A);
 
 for(auto scale : range(topscale))
     {
     printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
 
     auto tmp_inds = A.inds();
-    //std::cout<<tmp_inds<<std::endl;
     maxVal = 0.0;
     for (auto i0 : range1(tmp_inds[0].m()))
     for (auto i1 : range1(tmp_inds[1].m()))
@@ -55,22 +51,12 @@ for(auto scale : range(topscale))
         if(A.real(tmp_inds[0](i0),tmp_inds[1](i1),tmp_inds[2](i2),tmp_inds[3](i3))>maxVal)
         maxVal = A.real(tmp_inds[0](i0),tmp_inds[1](i1),tmp_inds[2](i2),tmp_inds[3](i3));
     }
-    //std::cout<<"max val in A:"<<std::endl;
-    //sumA = norm(A);
-    //PrintData(A.scale());
-    //std::cout<<maxVal<<std::endl;
 
-    //A = A/sumA;
     if(maxVal != 0)
     {
         lnZ += pow(2,topscale-scale)*log(maxVal);
         A = A/maxVal;
     }
-
-    //std::cout<<"A:"<<std::endl;
-    //PrintData(A);
-
-
 
     auto y = noprime(findtype(A,Ytype));
     auto y2 = prime(y,2);
@@ -91,9 +77,6 @@ for(auto scale : range(topscale))
 
     auto l13 = commonIndex(F1,F3);
     A = F1 * noprime(F4) * prime(F2,2) * prime(F3,l13,2);
-
-    //std::cout<<"A:"<<std::endl;
-    //PrintData(A);
 
     }
 
