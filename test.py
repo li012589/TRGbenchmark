@@ -1,7 +1,7 @@
 import time
 import subprocess
 
-trys = 2
+trys = 10
 command0 = ["python","./trg.py"]
 command1 = ["julia","./trg.jl"]
 command2 = ["./itrg/trg"]
