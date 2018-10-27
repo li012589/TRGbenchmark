@@ -1,4 +1,4 @@
-# Benchmark of Different Tenosr Implement
+# Benchmark of Different Tenosr Implements
 
 Currently, these test focus on three different implement: using pytorch; using julia and using itensor.
 
@@ -6,21 +6,36 @@ The result is
 
 | Implement | Time(average over 10 runs) |
 | --------- | -------------------------- |
-| pytorch   |                            |
-| julia     |                            |
-| itensor   |                            |
+| pytorch   | 1.7082539319992065s        |
+| julia     | 9.29224705696106s          |
+| itensor   | 7.977080273628235s         |
 
-The scaling curve is
+The scaling curve with iterations is
 
-[scaling curve][]
+![scaling curve](./iterations.pdf)
+
+The scaling curve with maximum cuts is
+
+![cut](./maximumcut.png)
 
 ## Details
 
-The test is done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor. And the pytorch test doesn't utilize a GPU.
+The test is done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor. And the pytorch test doesn't utilize a GPU. 
+
+Library versions:
+
+| name    | version                    |
+| ------- | -------------------------- |
+| pytorch | 1.0.0.dev20180921(nightly) |
+| julia   | 1.01                       |
+| itensor | 2.1.1                      |
+
+
 
 To perform this test on your machine, run
 
 ```bash
-
+python ./test.py
+python ./testscaling.py
 ```
 
