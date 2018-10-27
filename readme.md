@@ -1,6 +1,6 @@
 # Benchmark of Different Tenosr Implements
 
-Currently, these test focus on three different implement: using pytorch; using julia and using itensor.
+Currently, these tests focus on three different implement: using pytorch; using julia and using itensor.
 
 The result is
 
@@ -12,7 +12,7 @@ The result is
 
 The scaling curve with iterations is
 
-![scaling curve](./iterations.pdf)
+![scaling curve](./iterations.png)
 
 The scaling curve with maximum cuts is
 
