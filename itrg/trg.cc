@@ -1,13 +1,29 @@
 #include "itensor/all_basic.h"
-#include <algorithm>
+#include <string>
+#include <stdio.h>
 
 using namespace itensor;
 
-int main()
+int main(int argc, char* argv[])
 {
-Real T = 1.;
-int maxm = 20;
-int topscale = 20;
+    double T;
+    int maxm;
+    int topscale;
+
+    if(argc == 4)
+    {
+        std::cout<<"using parse"<<std::endl;
+        sscanf(argv[1], "%lf", &T);
+        sscanf(argv[2], "%d", &maxm);
+        sscanf(argv[3], "%d", &topscale);
+    }
+    else
+    {
+        std::cout<<"using default"<<std::endl;
+        T = 1.;
+        maxm = 20;
+        topscale = 20;
+    }
 
 auto m0 = 2;
 auto x = Index("x0",m0,Xtype);
@@ -28,7 +44,7 @@ for(auto s4 : range1(m0))
     {
     auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
             +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
-    auto val = exp(-(E-E0)/T);
+    auto val = exp(-(E-E0)*T);
     A.set(x(s1),y2(s2),x2(s3),y(s4),val);
     }
 
