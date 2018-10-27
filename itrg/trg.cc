@@ -12,14 +12,12 @@ int main(int argc, char* argv[])
 
     if(argc == 4)
     {
-        std::cout<<"using parse"<<std::endl;
         sscanf(argv[1], "%lf", &T);
-        sscanf(argv[2], "%d", &maxm);
-        sscanf(argv[3], "%d", &topscale);
+        sscanf(argv[2], "%d", &topscale);
+        sscanf(argv[3], "%d", &maxm);
     }
     else
     {
-        std::cout<<"using default"<<std::endl;
         T = 1.;
         maxm = 20;
         topscale = 20;
@@ -55,7 +53,7 @@ auto sumA=0.0;
 
 for(auto scale : range(topscale))
     {
-    printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
+        //printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
 
     auto tmp_inds = A.inds();
     maxVal = 0.0;
@@ -82,13 +80,13 @@ for(auto scale : range(topscale))
     auto F1 = ITensor(x2,y);
     auto F3 = ITensor(x,y2);
     auto xname = format("x%d",scale+1);
-    factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
+    factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",false,
                     "IndexType=",Xtype,"IndexName=",xname});
 
     auto F2 = ITensor(x,y);
     auto F4 = ITensor(y2,x2);
     auto yname = format("y%d",scale+1);
-    factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
+    factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",false,
                     "IndexType=",Ytype,"IndexName=",yname});
 
     auto l13 = commonIndex(F1,F3);
