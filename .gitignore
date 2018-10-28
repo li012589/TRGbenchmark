@@ -1,0 +1,3 @@
+itensor/trg
+itensor/*.o
+**/*.*~
