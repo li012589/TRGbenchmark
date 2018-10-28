@@ -33,7 +33,7 @@ function TRG(K::Float64,iteration::Int64,maxD::Int64)
         S3 = reshape(view(ua,:,1:cut)*Diagonal(sqrt.(view(sa,1:cut))),(D,D,cut))
         S4 = reshape(Diagonal(sqrt.(view(sa,1:cut)))*view(transpose(va),1:cut,:),(cut,D,D))
 
-        @tensoropt T[a,e,g,n] := S1[a,b,c]*S3[c,d,e]*S2[f,d,g]*S4[n,f,b]
+        @tensor T[a,e,g,n] := S1[a,b,c]*S3[c,d,e]*S2[f,d,g]*S4[n,f,b]
         #T = Tp
         D = cut
     end
