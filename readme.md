@@ -6,9 +6,9 @@ The result is
 
 | Implement | Time(average over 10 runs) |
 | --------- | -------------------------- |
-| pytorch   | 1.7082539319992065s        |
-| julia     | 9.29224705696106s          |
-| itensor   | 7.977080273628235s         |
+| pytorch   | 1.6036507606506347s        |
+| julia     | 7.61472373008728s          |
+| itensor   | 9.84425630569458s          |
 
 The scaling curve with iterations is
 
