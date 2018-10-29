@@ -20,7 +20,7 @@ The scaling curve with maximum cuts is
 
 ## Details
 
-This test is done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor. And the pytorch test doesn't utilize a GPU. 
+This test is done on a mid 2014 MacBook Pro with a 2.2GHz Intel i7 processor and 16G of memory. And the pytorch test doesn't utilize a GPU. 
 
 Library versions:
 
