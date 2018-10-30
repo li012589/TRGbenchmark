@@ -37,3 +37,6 @@ python ./test.py
 python ./testscaling.py
 ```
 
+## About TRG Algorithm
+
+[A beatiful tutorial of TRG by itensor](http://itensor.org/docs.cgi?page=book/trg)
