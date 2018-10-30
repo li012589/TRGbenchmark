@@ -6,9 +6,9 @@ The result is
 
 | Implement | Time(average over 10 runs) |
 | --------- | -------------------------- |
-| pytorch   | 1.6145774841308593s        |
-| julia     | 8.993184804916382s         |
-| itensor   | 7.370678853988648s         |
+| pytorch   | 1.61s                      |
+| julia     | 8.99s                      |
+| itensor   | 7.37s                      |
 
 The scaling curve with iterations is
 
@@ -39,4 +39,4 @@ python ./testscaling.py
 
 ## About TRG Algorithm
 
-[A beatiful tutorial of TRG by itensor](http://itensor.org/docs.cgi?page=book/trg)
+[A beautiful tutorial of TRG by itensor](http://itensor.org/docs.cgi?page=book/trg)
