@@ -5,3 +5,7 @@ This is a demo adapted from itensor's official tutorial. Difference mainly is ex
 ## To complie
 
 Change the first line of `Makefile` to change path to itensor. Then `make` .
+
+## Reference
+
+[1]. [orginal itensor tutorial page](http://itensor.org/docs.cgi?page=book/trg)
