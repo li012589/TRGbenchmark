@@ -40,7 +40,7 @@ function TRG(K::Float64,iteration::Int64,maxD::Int64)
 
     trace = 0.0
     for i = 1:D
-        trace += T[i,i,i,i]
+        @inbounds trace += T[i,i,i,i]
     end
     lnZ += log(trace)
 
