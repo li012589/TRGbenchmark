@@ -12,6 +12,9 @@ parser.add_argument("-cut", type = int, default=20,help="")
 parser.add_argument("-test",action = 'store_true',help="")
 
 args = parser.parse_args()
+
+torch.set_num_threads(1)
+#print("Thread num:",torch.get_num_threads())
 torch.set_grad_enabled(False)
 
 K = torch.tensor([1/args.T*args.J],dtype= torch.float64)
